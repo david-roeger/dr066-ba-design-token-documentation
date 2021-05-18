@@ -87,7 +87,7 @@ async function run() {
 
     styleDictionary.buildAllPlatforms();
 
-    console.log(`All Done (${new Date().toTimeString()})`);
+    console.log(`All Done (${new Date().toLocaleTimeString()})`);
     console.log();
 }
 
