@@ -24,7 +24,6 @@ function getColors(stylesArtboard) {
 
         // convert fill to rgba
         let fill = color.fills[0];
-        console.log(fill.opacity);
 
         let r = rgba(fill.color.r)
         let g = rgba(fill.color.g)
@@ -88,7 +87,8 @@ async function run() {
 
     styleDictionary.buildAllPlatforms();
 
-    console.log("--- All Done ---");
+    console.log(`All Done (${new Date().toTimeString()})`);
+    console.log();
 }
 
 run()
