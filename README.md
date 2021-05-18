@@ -1,16 +1,13 @@
-# Development System showcasing the design components
+# Design Tokens
 
-## Developing
+Generate Design Tokens based on Figma file.
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Edit config.json for plattform support
 
-```bash
-npm run storybook
-
-
-## Building
+Build: 
 
 ```bash
-npm run build
+node main.js
 ```
+
 
