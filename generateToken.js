@@ -2,24 +2,6 @@
 const fs = require("fs");
 const fetch = require('node-fetch');
 
-let debug = false;
-
-const styleDictionary = require('style-dictionary').extend({
-    source: ["./tokens.json"],
-    platforms: {
-        scss: {
-            ransformGroup: "scss",
-            buildPath: "./build/scss/",
-            files: [{
-            destination: "test.scss",
-            format: "scss/variables"
-            }]
-        }
-    }
-});
-
-const del = require('del');
-
 
 let figmaTree;
 let designTokens;
@@ -96,15 +78,7 @@ async function run() {
 
     await writeJsonFile();
 
-    await del('build');
-
-    styleDictionary.buildAllPlatforms();
-
-    if(!debug) {
-        await del('tokens.json');
-    }
-
-    console.log(`All Done (${new Date().toLocaleTimeString()})`);
+    console.log(`Generate Token done (${new Date().toLocaleTimeString()})`);
     console.log();
 }
 

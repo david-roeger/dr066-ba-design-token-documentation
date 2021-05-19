@@ -2,12 +2,29 @@
 
 Generate Design Tokens based on Figma file.
 
-Edit config.json for plattform support
+Edit config obj in buildDictionary.js for more plattform support
 
-Build: 
+<br>
 
+Build all files:
 ```bash
-node main.js
+npm run dev
 ```
 
+<br>
 
+Generate Tokens:
+```bash
+npm run generate
+```
+
+<br>
+
+Build Dictionary Files:
+```bash
+npm run build-dictionary
+```
+
+<br>
+
+Edit tailwind config file to include more Tailwind styles!
