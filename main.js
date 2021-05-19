@@ -2,7 +2,21 @@
 const fs = require("fs");
 const fetch = require('node-fetch');
 
-const styleDictionary = require('style-dictionary').extend('./config.json');
+let debug = false;
+
+const styleDictionary = require('style-dictionary').extend({
+    source: ["./tokens.json"],
+    platforms: {
+        scss: {
+            ransformGroup: "scss",
+            buildPath: "./build/scss/",
+            files: [{
+            destination: "test.scss",
+            format: "scss/variables"
+            }]
+        }
+    }
+});
 
 const del = require('del');
 
@@ -14,7 +28,7 @@ let designTokens;
 function getColors(stylesArtboard) {
     const colors = {};
     const colorsArtboard = stylesArtboard.filter(style => {
-        return style.name === "Colors";
+        return style.name === "Color";
     })[0].children;
 
     colorsArtboard.map(color => {
@@ -39,9 +53,8 @@ function getColors(stylesArtboard) {
 }
 
 // get figma json
-figmaApiToken = "189840-58838f90-2466-48a1-9634-2006f1332482"
-figmaId = "kGm31xFt0PUcFsiqSzdwk0"
-figmaNodes = ["13%3A2'"]
+const figmaApiToken = "189840-58838f90-2466-48a1-9634-2006f1332482"
+const figmaId = "kGm31xFt0PUcFsiqSzdwk0"
 async function getFigmaTree() {
     const query = "https://api.figma.com/v1/files/" + figmaId;
     const result = await fetch(query, {
@@ -86,6 +99,10 @@ async function run() {
     await del('build');
 
     styleDictionary.buildAllPlatforms();
+
+    if(!debug) {
+        await del('tokens.json');
+    }
 
     console.log(`All Done (${new Date().toLocaleTimeString()})`);
     console.log();
