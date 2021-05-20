@@ -1,4 +1,4 @@
-const { colors, font, spacing } = require('./_tokens');
+const { colors, font, spacing, breakPoints, grid } = require('./_tokens');
 
 // get Colors
 let colorObj = {}
@@ -26,6 +26,19 @@ for (const element in spacing) {
   spacingObj[element] = spacing[element].value
 }
 
+// get Breakpoints
+let breakPointsObj = {}
+for (const element in breakPoints) {
+  breakPointsObj[element] = breakPoints[element].value
+}
+
+// get Grid
+let gridObj= {}
+for (const element in grid) {
+  gridObj[element] = `repeat(${grid[element].value}, minmax(0, 1fr))`
+}
+
+console.log(gridObj); 
 module.exports = {
   mode: 'jit',
   purge: {
@@ -34,6 +47,9 @@ module.exports = {
     content: ['./index.html', './src/**/*.tsx', './src/**/*.ts'],
   },
   theme: {
+    screens: {
+      ...breakPointsObj
+    },
     colors: {
       ...colorObj
     },
@@ -49,6 +65,9 @@ module.exports = {
     extend: {
       fontFamily: {
         ...fontObj.fontFamily
+      },
+      gridTemplateColumns: {
+        ...gridObj
       }
     }
   },

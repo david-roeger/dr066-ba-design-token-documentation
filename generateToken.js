@@ -86,6 +86,27 @@ function getSpacing(stylesArtboard) {
     return spacing;
 }
 
+// get breakpoints from styles artboard
+function getBreakPoints(stylesArtboard) {
+    const breakPoints = {};
+    const breakPointsArtboard = stylesArtboard.filter(style => {
+        return style.name === "Breakpoints";
+    })[0].children;
+    
+    breakPointsArtboard.map(breakPoint => {
+        // filter comments
+        if(breakPoint.type == 'TEXT') {
+            return
+        }
+
+        breakPoints[breakPoint.name] = {
+            value: `${breakPoint.absoluteBoundingBox.width}px`,
+            type: "breakPoint"
+        }
+    });
+    return breakPoints;
+}
+
 // get grid from styles artboard
 function getGrid(stylesArtboard) {
     const grid = {};
@@ -98,18 +119,10 @@ function getGrid(stylesArtboard) {
         if(gridVariant.type == 'TEXT') {
             return
         }
-        console.log(gridVariant)
 
         grid[gridVariant.name] = {
-            count: {
-                value: `${gridVariant.children.length}`,
-                type: "count"
-            },
-            gap: {
-                value: `${gridVariant.itemSpacing}px`,
-                type: "gap"
-            }
-           
+            value: `${gridVariant.children.length}`,
+            type: "count"
         }
     });
     return grid;
@@ -139,6 +152,7 @@ function setDesignTokens() {
         colors: {},
         font: {},
         spacing: {},
+        breakPoints: {},
         grid: {}
     };
 
@@ -146,6 +160,7 @@ function setDesignTokens() {
     designTokens.colors = getColors(stylesArtboard);
     designTokens.font = getFont(stylesArtboard);
     designTokens.spacing = getSpacing(stylesArtboard);
+    designTokens.breakPoints = getBreakPoints(stylesArtboard);
     designTokens.grid = getGrid(stylesArtboard);
 }
 
