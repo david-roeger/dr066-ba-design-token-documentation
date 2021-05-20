@@ -14,6 +14,11 @@ function getColors(stylesArtboard) {
     })[0].children;
 
     colorsArtboard.map(color => {
+
+        // filter comments
+        if(color.type == 'TEXT') {
+            return
+        }
         function rgba(val) {
             return Math.floor(val * 255);
         }
@@ -32,6 +37,31 @@ function getColors(stylesArtboard) {
         }
     });
     return colors;
+}
+
+// get font from styles artboard
+function getFont(stylesArtboard) {
+    const font = {};
+    const fontArtboard = stylesArtboard.filter(style => {
+        return style.name === "Typography";
+    })[0].children;
+    fontArtboard.map(fontVariation => {
+        font[fontVariation.name] = {
+            family: {
+                value: `${fontVariation.style.fontFamily}`,
+                type: "typography"
+            },
+            size: {
+                value: `${fontVariation.style.fontSize}px`,
+                type: "typography"
+            },
+            lineheight: {
+                value: `${fontVariation.style.lineHeightPx}px`,
+                type: "typography"
+            }
+        }
+    });
+    return font;
 }
 
 // get figma json
@@ -55,11 +85,13 @@ function setDesignTokens() {
     })[0].children;
 
     designTokens = {
-        colors: {}
+        colors: {},
+        font: {},
     };
 
     // populate design tokens
-    designTokens.colors = getColors(stylesArtboard)
+    designTokens.colors = getColors(stylesArtboard);
+    designTokens.font = getFont(stylesArtboard);
 }
 
 async function writeJsonFile() {

@@ -1,8 +1,21 @@
-const { colors } = require('./_tokens');
+const { colors, font } = require('./_tokens');
 
 let colorObj = {}
 for (const element in colors) {
   colorObj[element] = colors[element].value
+}
+
+let fontObj = {
+  fontFamily: {},
+  size: {},
+  lineHeight: {}
+}
+for (const element in font) {
+  if(font[element].family) {
+      fontObj.fontFamily[font[element].family.value.toLowerCase()] = font[element].family.value
+  }
+  fontObj.size[element] = font[element].size.value
+  fontObj.lineHeight[element] = font[element].lineheight.value
 }
 
 module.exports = {
@@ -15,13 +28,19 @@ module.exports = {
   theme: {
     colors: {
       ...colorObj
+    },
+    fontSize: {
+      ...fontObj.size
+    },
+    lineHeight: {
+      ...fontObj.lineHeight
+    },
+    extend: {
+      fontFamily: {
+        ...fontObj.fontFamily
+      }
     }
   },
   variants: {},
   plugins: [],
 }
-
-fs.copyFile('source.txt', 'destination.txt', (err) => {
-  if (err) throw err;
-  console.log('source.txt was copied to destination.txt');
-});
