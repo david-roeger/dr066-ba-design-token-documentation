@@ -86,6 +86,35 @@ function getSpacing(stylesArtboard) {
     return spacing;
 }
 
+// get grid from styles artboard
+function getGrid(stylesArtboard) {
+    const grid = {};
+    const gridArtboard = stylesArtboard.filter(style => {
+        return style.name === "Grid";
+    })[0].children;
+    
+    gridArtboard.map(gridVariant => {
+        // filter comments
+        if(gridVariant.type == 'TEXT') {
+            return
+        }
+        console.log(gridVariant)
+
+        grid[gridVariant.name] = {
+            count: {
+                value: `${gridVariant.children.length}`,
+                type: "count"
+            },
+            gap: {
+                value: `${gridVariant.itemSpacing}px`,
+                type: "gap"
+            }
+           
+        }
+    });
+    return grid;
+}
+
 // get figma json
 const figmaApiToken = "189840-58838f90-2466-48a1-9634-2006f1332482"
 const figmaId = "kGm31xFt0PUcFsiqSzdwk0"
@@ -109,13 +138,15 @@ function setDesignTokens() {
     designTokens = {
         colors: {},
         font: {},
-        spacing: {}
+        spacing: {},
+        grid: {}
     };
 
     // populate design tokens
     designTokens.colors = getColors(stylesArtboard);
     designTokens.font = getFont(stylesArtboard);
-    designTokens.spacing = getSpacing(stylesArtboard)
+    designTokens.spacing = getSpacing(stylesArtboard);
+    designTokens.grid = getGrid(stylesArtboard);
 }
 
 async function writeJsonFile() {
