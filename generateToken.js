@@ -64,6 +64,28 @@ function getFont(stylesArtboard) {
     return font;
 }
 
+
+// get font from styles artboard
+function getSpacing(stylesArtboard) {
+    const spacing = {};
+    const spacingArtboard = stylesArtboard.filter(style => {
+        return style.name === "Spacing";
+    })[0].children;
+    
+    spacingArtboard.map(space => {
+        // filter comments
+        if(space.type == 'TEXT') {
+            return
+        }
+
+        spacing[space.name] = {
+            value: `${space.absoluteBoundingBox.height}px`,
+            type: "space"
+        }
+    });
+    return spacing;
+}
+
 // get figma json
 const figmaApiToken = "189840-58838f90-2466-48a1-9634-2006f1332482"
 const figmaId = "kGm31xFt0PUcFsiqSzdwk0"
@@ -87,11 +109,13 @@ function setDesignTokens() {
     designTokens = {
         colors: {},
         font: {},
+        spacing: {}
     };
 
     // populate design tokens
     designTokens.colors = getColors(stylesArtboard);
     designTokens.font = getFont(stylesArtboard);
+    designTokens.spacing = getSpacing(stylesArtboard)
 }
 
 async function writeJsonFile() {

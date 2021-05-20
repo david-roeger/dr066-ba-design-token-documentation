@@ -1,10 +1,12 @@
-const { colors, font } = require('./_tokens');
+const { colors, font, spacing } = require('./_tokens');
 
+// get Colors
 let colorObj = {}
 for (const element in colors) {
   colorObj[element] = colors[element].value
 }
 
+// get Fonts
 let fontObj = {
   fontFamily: {},
   size: {},
@@ -16,6 +18,12 @@ for (const element in font) {
   }
   fontObj.size[element] = font[element].size.value
   fontObj.lineHeight[element] = font[element].lineheight.value
+}
+
+// get Spacing
+let spacingObj= {}
+for (const element in spacing) {
+  spacingObj[element] = spacing[element].value
 }
 
 module.exports = {
@@ -34,6 +42,9 @@ module.exports = {
     },
     lineHeight: {
       ...fontObj.lineHeight
+    },
+    spacing: {
+        ...spacingObj
     },
     extend: {
       fontFamily: {
