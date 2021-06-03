@@ -34,5 +34,3 @@ export function ColorElement( { name, color }) {
         </div>
     </div>
 };
-
-var colorcode = "rgba(0, 0, 0, 0.74)";
