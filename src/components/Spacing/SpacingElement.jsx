@@ -6,7 +6,7 @@ export function SpacingElement( { name, spacing }) {
 
     return <div className="border flex flex-col justify-between">
             <div className="flex-grow">
-                <CopyToClipBoard full text={`-${name}`}>
+                <CopyToClipBoard full text={name}>
                         <div style={{height: spacing.value}} className="bg-zwave-300"></div>
                 </CopyToClipBoard>
             </div>

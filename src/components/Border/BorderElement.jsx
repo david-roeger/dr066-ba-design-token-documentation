@@ -7,7 +7,7 @@ export function BorderElement( { name, border }) {
 return <div className="border">
         <div className="p-sm pb-0">
             <CopyToClipBoard text={name === "DEFAULT" ? "border" : name}>
-                <div style={{borderWidth: border.value}} className={`border-black border-solid bg-enocean-300 h-2xl`}> </div>
+                <div style={{borderWidth: border.value}} className="border-black border-solid bg-enocean-300 h-2xl"> </div>
             </CopyToClipBoard>
         </div>
         <div className="m-sm">

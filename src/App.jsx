@@ -14,7 +14,6 @@ function App() {
   return (
     <div className="font-inter p-sm md:p-md lg:p-lg xl:pd-2xl">
       { Object.keys(tokens).map((token => {
-        console.log(token);
         let t = tokens[token];
         console.log(t);
       }))}
