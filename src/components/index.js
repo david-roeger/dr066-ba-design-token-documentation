@@ -9,3 +9,6 @@ export { FontElement } from './Font/FontElement'
 
 export { SpacingContainer } from './Spacing/SpacingContainer'
 export { SpacingElement } from './Spacing/SpacingElement'
+
+export { GridContainer } from './Grid/GridContainer'
+export { GridElement } from './Grid/GridElement'
