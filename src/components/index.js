@@ -15,3 +15,6 @@ export { BorderElement } from './Border/BorderElement'
 
 export { GridContainer } from './Grid/GridContainer'
 export { GridElement } from './Grid/GridElement'
+
+export { BreakPointContainer } from './BreakPoint/BreakPointContainer'
+export { BreakPointElement } from './BreakPoint/BreakPointElement'

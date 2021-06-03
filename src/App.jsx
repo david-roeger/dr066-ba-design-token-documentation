@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { ColorContainer, FontContainer, SpacingContainer, GridContainer, BorderContainer } from './components/index'
+import { ColorContainer, FontContainer, SpacingContainer, GridContainer, BorderContainer, BreakPointContainer } from './components/index'
 import tokens from 'dr066-ba-design-token-builder/tokens'
 
 let colors = tokens.colors;
@@ -7,7 +7,7 @@ let fonts = tokens.font;
 let spacings = tokens.spacing;
 let borders = tokens.borders;
 let grids = tokens.grid;
-let breakpoints = tokens.breakPoints;
+let breakPoints = tokens.breakPoints;
 
 function App() {
   console.log(tokens);
@@ -23,6 +23,7 @@ function App() {
       <SpacingContainer spacings={spacings}></SpacingContainer>
       <BorderContainer borders={borders}></BorderContainer>
       <GridContainer grids={grids}></GridContainer>
+      <BreakPointContainer breakPoints={breakPoints}></BreakPointContainer>
     </div>
   )
 }
