@@ -4,19 +4,46 @@ import { Container, Description, BreakPointElement } from '../index'
 
 export function BreakPointContainer( { description, breakPoints, vertical } ) {
 
-    return <Container overflow>
+    let breakPointValueMap = Object.keys(breakPoints).map(breakPoint => {
+        return getComputed(breakPoints[breakPoint]);
+    });
+
+
+    breakPointValueMap.reverse();
+    breakPointValueMap.push(0);
+
+    let breakPointPercentMap = breakPointValueMap.map((value, index) => {
+        let p = 100;
+        let first = breakPointValueMap[0]
+        if(value !== first) {
+            p = 100 / first * value
+        };
+        return p
+    })
+
+    function getComputed( { value }) {
+        return parseInt(value.substring(0, value.length - 2));
+    }
+
+    return <div>
+        <Container alignedBottom>
         <h2 className="text-xl mb-sm">Breakpoint</h2>
         { description && 
             <Description>
                 <p>Kurzer Beschreibungstext</p>
             </Description>
         }
-        <div className={`flex ${vertical ? "flex-col": "flex-row"} gap-sm md:gap-md lg:gap-lg xl:gap-xl w-full overflow-auto pb-md`}>
-            { Object.keys(breakPoints).map(breakPoint => (
-                <BreakPointElement name={ breakPoint } breakPoint={ breakPoints[breakPoint] } key={ breakPoint }></BreakPointElement>
+            </Container>
+        <div className={`block w-full`}>
+            { Object.keys(breakPoints).reverse().map((breakPoint, index) => (
+                <BreakPointElement 
+                    name={ breakPoint } 
+                    breakPoint={ breakPoints[breakPoint] } 
+                    computed={breakPointPercentMap[index]} 
+                    index={index} key={ breakPoint }></BreakPointElement>
             ))}
         </div>
-    </Container>
+    </div>
 };
 
 BreakPointContainer.defaultProps = {
