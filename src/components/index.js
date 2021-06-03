@@ -1,5 +1,7 @@
 export { Container } from './Utils/Container'
 export { CopyToClipBoard } from './Utils/CopyToClipBoard'
+export { Description } from './Utils/Description'
+export { Nav } from './Utils/Nav'
 
 export { ColorContainer } from './Color/ColorContainer'
 export { ColorElement } from './Color/ColorElement'
