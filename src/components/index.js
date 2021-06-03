@@ -6,3 +6,6 @@ export { ColorElement } from './Color/ColorElement'
 
 export { FontContainer } from './Font/FontContainer'
 export { FontElement } from './Font/FontElement'
+
+export { SpacingContainer } from './Spacing/SpacingContainer'
+export { SpacingElement } from './Spacing/SpacingElement'
