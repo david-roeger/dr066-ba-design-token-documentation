@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { CopyToClipBoard } from '../home'
+import { CopyToClipBoard } from '../index'
 
 export function SpacingElement( { name, spacing }) {
 

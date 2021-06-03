@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Container, Description, BorderElement } from '../home'
+import { Container, Description, BorderElement } from '../index'
 
 export function BorderContainer( { description, borders } ) {
     return <Container>

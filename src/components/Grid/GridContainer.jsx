@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Container, Description, GridElement } from '../home'
+import { Container, Description, GridElement } from '../index'
 
 export function GridContainer( { description, grids } ) {
 

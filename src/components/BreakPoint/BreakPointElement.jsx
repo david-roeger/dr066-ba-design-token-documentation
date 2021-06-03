@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { CopyToClipBoard, Container } from '../home'
+import { CopyToClipBoard, Container } from '../index'
 
 export function BreakPointElement( { name, breakPoint, computed , index}) {
 

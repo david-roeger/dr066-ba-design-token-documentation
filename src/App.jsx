@@ -4,8 +4,8 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-import { Nav, ColorContainer, FontContainer, SpacingContainer, GridContainer, BorderContainer, BreakPointContainer } from './Components/home'
-import { Index } from './Layouts/layout'
+import { Nav, ColorContainer, FontContainer, SpacingContainer, GridContainer, BorderContainer, BreakPointContainer } from './Components'
+import { Index } from './Layouts'
 import tokens from 'dr066-ba-design-token-builder/web'
 
 let colors = tokens.colors;
