@@ -67,12 +67,12 @@ const BreakPointRoute = () => (
 
 const OverviewRoute = () => (
   <div>
-      <ColorContainer colors={colors}></ColorContainer>
-      <FontContainer fonts={fonts}></FontContainer>
-      <SpacingContainer spacings={spacings}></SpacingContainer>
-      <BorderContainer borders={borders}></BorderContainer>
-      <GridContainer grids={grids}></GridContainer>
-      <BreakPointContainer breakPoints={breakPoints}></BreakPointContainer>
+      <ColorContainer description={false} colors={colors}></ColorContainer>
+      <FontContainer description={false} fonts={fonts}></FontContainer>
+      <SpacingContainer description={false} spacings={spacings}></SpacingContainer>
+      <BorderContainer description={false} borders={borders}></BorderContainer>
+      <GridContainer description={false} grids={grids}></GridContainer>
+      <BreakPointContainer description={false} breakPoints={breakPoints}></BreakPointContainer>
   </div>
 )
 

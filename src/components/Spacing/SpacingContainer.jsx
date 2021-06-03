@@ -1,11 +1,16 @@
 
 import React from 'react';
-import { Container, SpacingElement } from '../index'
+import { Container, Description, SpacingElement } from '../index'
 
-export function SpacingContainer( { spacings } ) {
+export function SpacingContainer( { description, spacings } ) {
 
     return <Container>
-        <h2 className="text-xl mb-md">Spacing</h2>
+       <h2 className="text-xl mb-sm">Spacing</h2>
+       { description && 
+            <Description>
+                <p>Kurzer Beschreibungstext</p>
+            </Description>
+        }
         <div className="grid
             grid-cols-sm gap-sm 
             md:grid-cols-md md:gap-md 
@@ -16,3 +21,7 @@ export function SpacingContainer( { spacings } ) {
         </div>
     </Container>
 };
+
+SpacingContainer.defaultProps = {
+    description: true
+};  

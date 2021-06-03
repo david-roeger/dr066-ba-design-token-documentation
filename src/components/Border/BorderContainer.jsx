@@ -1,11 +1,15 @@
 
 import React from 'react';
-import { Container, BorderElement } from '../index'
+import { Container, Description, BorderElement } from '../index'
 
-export function BorderContainer( { borders } ) {
-    console.log(borders);
+export function BorderContainer( { description, borders } ) {
     return <Container>
-        <h2 className="text-xl mb-md">Border</h2>
+        <h2 className="text-xl mb-sm">Border</h2>
+        { description && 
+            <Description>
+                <p>Kurzer Beschreibungstext</p>
+            </Description>
+        }
         <div className="grid md:grid-cols-sm gap-sm md:gap-md lg:gap-lg xl:gap-xl">
             { Object.keys(borders).map((border) => (
                 <BorderElement name={ border } border={ borders[border] } key={ border }></BorderElement>
@@ -13,3 +17,7 @@ export function BorderContainer( { borders } ) {
         </div>
     </Container>
 };
+
+BorderContainer.defaultProps = {
+    description: true
+};  

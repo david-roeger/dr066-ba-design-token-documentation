@@ -1,10 +1,15 @@
 
 import React from 'react';
-import { Container, ColorElement } from '../index'
+import { Container, Description, ColorElement } from '../index'
 
-export function ColorContainer( { colors } ) {
+export function ColorContainer( { description, colors } ) {
     return <Container>
-        <h2 className="text-xl mb-md">Color</h2>
+        <h2 className="text-xl mb-sm">Color</h2>
+        { description && 
+            <Description>
+                <p>Kurzer Beschreibungstext</p>
+            </Description>
+        }
         <div className="grid 
             grid-cols-sm gap-sm 
             md:grid-cols-md md:gap-md 
@@ -16,3 +21,7 @@ export function ColorContainer( { colors } ) {
         </div>
     </Container>
 };
+
+ColorContainer.defaultProps = {
+    description: true
+};  
