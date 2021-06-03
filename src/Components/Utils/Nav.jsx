@@ -54,7 +54,7 @@ export function Nav() {
             <ul className="flex flex-wrap gap-x-md gap-y-sm">
                 {
                     navConfig.map((item, index) => (
-                        <li className={`py-xs px-sm cursor-pointer border border-black ${location.pathname === item.route ? item.color : ''}`} key={index}>
+                        <li className={`select-none py-xs px-sm cursor-pointer border border-black ${location.pathname === item.route ? item.color : ''}`} key={index}>
                             <Link to={item.route}>{item.name}</Link>
                         </li>
                     ))
