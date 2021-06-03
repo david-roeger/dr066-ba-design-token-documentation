@@ -46,7 +46,6 @@ let navConfig = [
     }
 ]
 export function Nav() {
-    console.log(useLocation());
     let location = useLocation();
     location
 

@@ -2,7 +2,6 @@
 import React from 'react';
 
 export function Description( { children } ) {
-    console.log(children);
     let c = []
     if(children && typeof children === 'object') {
         c.push(children);

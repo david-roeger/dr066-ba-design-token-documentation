@@ -1,2 +1,1 @@
-export { Home } from './Home/Home'
-export { Token } from './Token/Token'
+export { Index } from './Index/Index'
