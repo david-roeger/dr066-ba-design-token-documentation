@@ -11,6 +11,7 @@
     "dr066-ba-design-token-builder": "git+https://git@github.com/david-roeger/dr066-ba-design-token-builder.git",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
+    "react-router-dom": "^5.2.0",
     "react-transition-group": "^4.4.2"
   },
   "devDependencies": {

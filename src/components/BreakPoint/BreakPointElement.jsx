@@ -6,7 +6,7 @@ export function BreakPointElement( { name, breakPoint }) {
 
 return <div className="border">
         <CopyToClipBoard text={name}>
-            <div style={{width: breakPoint.value}} className="bg-enocean-300 h-[400px]"> </div>
+            <div style={{width: breakPoint.value}} className="bg-pink-300 h-[140px]"> </div>
         </CopyToClipBoard>
         <div className="m-sm">
             <p> { name } </p>

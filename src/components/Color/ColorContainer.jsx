@@ -4,7 +4,7 @@ import { Container, ColorElement } from '../index'
 
 export function ColorContainer( { colors } ) {
     return <Container>
-        <h2 className="text-xl mb-md">Colors</h2>
+        <h2 className="text-xl mb-md">Color</h2>
         <div className="grid 
             grid-cols-sm gap-sm 
             md:grid-cols-md md:gap-md 
