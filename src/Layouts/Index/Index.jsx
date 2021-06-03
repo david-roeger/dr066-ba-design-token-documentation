@@ -17,6 +17,7 @@ export function Index() {
         <Description>
             <p>Ideas for the future:</p>
             <ul className="list-disc list-inside">
+                <li>Add an Option to choose prefered Platform (iOS, Web, Andorid,..) - Change Token names, values and copy texts accordingly. Currently only Tailwind is supported</li>
                 <li>Add an Option to run the token generation Process via Webhook / Github Actions</li>
                 <li>Maybe include the token generation process in this project?</li>
             </ul>
