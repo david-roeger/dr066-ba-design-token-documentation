@@ -11,7 +11,7 @@ export function CopyToClipBoard( { text, full, children } ) {
             setSuccess(true);
             setTimeout(() => {
                 setSuccess(false);   
-            }, 500);
+            }, 1000);
           }, function(err) {
             console.error('Async: Could not copy text: ', err);
           });
