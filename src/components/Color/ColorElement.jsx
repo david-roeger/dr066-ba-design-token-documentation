@@ -26,7 +26,7 @@ export function ColorElement( { name, color }) {
 
     return <div className="border">
         <CopyToClipBoard text={ name }>
-            <div style={{ backgroundColor: color.value, aspectRatio: '1 / 1'}} className={RGBToHex(color.value) === "#ffffff" ? 'border-b' : ''}></div>
+            <div style={{ backgroundColor: color.value, aspectRatio: '1 / 1'}} className={`min-h-[120px] ${RGBToHex(color.value) === "#ffffff" ? 'border-b' : ''}`}></div>
         </CopyToClipBoard>
         <div className="p-sm">
             <p> { name } </p>
