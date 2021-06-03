@@ -1,6 +1,5 @@
 
 import React from 'react';
-
 import { Container, ColorElement } from '../index'
 
 export function ColorContainer( { colors } ) {

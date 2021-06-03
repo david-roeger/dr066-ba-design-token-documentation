@@ -1,4 +1,8 @@
 const theme = require('dr066-ba-design-token-builder/tailwindTheme');
+theme.extend.animation = {
+  'pulse-fast': 'pulse 0.5s linear infinite',
+}
+console.log(theme);
 
 module.exports = {
   purge: {

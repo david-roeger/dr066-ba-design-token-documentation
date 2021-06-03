@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { CopyToClipBoard } from '../index'
 
 export function ColorElement( { name, color }) {
 
@@ -7,7 +8,7 @@ export function ColorElement( { name, color }) {
         // Choose correct separator
         let sep = rgb.indexOf(",") > -1 ? "," : " ";
         // Turn "rgb(r,g,b)" into [r,g,b]
-        rgb = rgb.substr(4).split(")")[0].split(sep);
+        rgb = rgb.substr(5).split(")")[0].split(sep);
         
         let r = (+rgb[0]).toString(16),
             g = (+rgb[1]).toString(16),
@@ -24,9 +25,13 @@ export function ColorElement( { name, color }) {
         }
 
     return <div className="border">
-        <div style={{ backgroundColor: color.value, aspectRatio: '1 / 1'}}></div>
-        <p className="mx-sm my-xs mt-sm"> { name } </p>
-        <p className="mx-sm my-xs mb-sm text-sm leading-sm text-gray-500"> { RGBToHex(color.value) } </p>
+        <CopyToClipBoard text={ name }>
+            <div style={{ backgroundColor: color.value, aspectRatio: '1 / 1'}} className={RGBToHex(color.value) === "#ffffff" ? 'border-b' : ''}></div>
+        </CopyToClipBoard>
+        <div className="p-sm">
+            <p> { name } </p>
+            <p className="text-sm leading-sm text-gray-500"> { RGBToHex(color.value) } </p>
+        </div>
     </div>
 };
 

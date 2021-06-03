@@ -1,6 +1,5 @@
 
 import React from 'react';
-
 import { Container, FontElement } from '../index'
 
 export function FontContainer( { fonts } ) {
