@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-import { Nav, ColorContainer, FontContainer, SpacingContainer, GridContainer, BorderContainer, BreakPointContainer } from './Components/index'
+//import { Nav, ColorContainer, FontContainer, SpacingContainer, GridContainer, BorderContainer, BreakPointContainer } from './Components/index'
 import { Index } from './Layouts/index'
 import tokens from 'dr066-ba-design-token-builder/web'
 
@@ -18,17 +18,7 @@ function App() {
   return (
       <BrowserRouter>
         <div className="font-inter">
-          <Nav></Nav>
-          <Switch>
-              <Route exact path="/" render={() => <Index />} />
-              <Route path="/color" render={() => <ColorContainer colors={colors} /> } />
-              <Route path="/font" render={() =>  <FontContainer fonts={fonts} />} />
-              <Route path="/spacing" render={() => <SpacingContainer spacings={spacings}></SpacingContainer>} />
-              <Route path="/border" render={() =>   <BorderContainer borders={borders} />} />
-              <Route path="/grid" render={() =>   <GridContainer grids={grids} />} />
-              <Route path="/breakpoint" render={() =>   <BreakPointContainer vertical breakPoints={breakPoints} />} />
-              <Route path="/overview" render={() => <OverviewRoute />} />
-          </Switch>
+         
         </div>
       </BrowserRouter>
   );
