@@ -10,5 +10,8 @@ export { FontElement } from './Font/FontElement'
 export { SpacingContainer } from './Spacing/SpacingContainer'
 export { SpacingElement } from './Spacing/SpacingElement'
 
+export { BorderContainer } from './Border/BorderContainer'
+export { BorderElement } from './Border/BorderElement'
+
 export { GridContainer } from './Grid/GridContainer'
 export { GridElement } from './Grid/GridElement'

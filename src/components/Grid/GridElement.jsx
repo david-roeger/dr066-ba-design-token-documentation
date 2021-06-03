@@ -11,7 +11,7 @@ export function GridElement( { name, index, grid }) {
             <div style={{gridTemplateColumns: `repeat(${grid.value}, minmax(0, 1fr))`}} className={`grid gap-${name} bg-white`}>
                 {
                     [...new Array(parseInt(grid.value))].map((e, index) => (
-                        <div className="bg-enocean-300 h-2xl" key={index}></div>
+                        <div className="bg-zigbee-300 h-2xl" key={index}></div>
                     ))
                 }
             </div>
