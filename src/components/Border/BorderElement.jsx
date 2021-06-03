@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { CopyToClipBoard } from '../index'
+import { CopyToClipBoard } from '../home'
 
 export function BorderElement( { name, border }) {
 

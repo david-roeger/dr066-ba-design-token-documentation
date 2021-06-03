@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Container, Description, ColorElement } from '../index'
+import { Container, Description, ColorElement } from '../home'
 
 export function ColorContainer( { description, colors } ) {
     return <Container>

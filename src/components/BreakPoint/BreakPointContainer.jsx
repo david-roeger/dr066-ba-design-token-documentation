@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Container, Description, BreakPointElement } from '../index'
+import { Container, Description, BreakPointElement } from '../home'
 
 export function BreakPointContainer( { description, breakPoints, vertical } ) {
 

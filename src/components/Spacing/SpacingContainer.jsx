@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Container, Description, SpacingElement } from '../index'
+import { Container, Description, SpacingElement } from '../home'
 
 export function SpacingContainer( { description, spacings } ) {
 

@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Container, Description, FontElement } from '../index'
+import { Container, Description, FontElement } from '../home'
 
 export function FontContainer( { description, fonts } ) {
 

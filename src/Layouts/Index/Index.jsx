@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Container, Description } from '../../Components/index'
+import { Container, Description } from '../../Components/home'
 
 import tokens from 'dr066-ba-design-token-builder/tokens';
 
