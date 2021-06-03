@@ -11,7 +11,7 @@ export function BreakPointContainer( { description, breakPoints, vertical } ) {
                 <p>Kurzer Beschreibungstext</p>
             </Description>
         }
-        <div className={`flex ${vertical ? "flex-col": "flex-row"} gap-sm md:gap-md lg:gap-lg xl:gap-xl`}>
+        <div className={`flex ${vertical ? "flex-col": "flex-row"} gap-sm md:gap-md lg:gap-lg xl:gap-xl w-full overflow-auto pb-md`}>
             { Object.keys(breakPoints).map(breakPoint => (
                 <BreakPointElement name={ breakPoint } breakPoint={ breakPoints[breakPoint] } key={ breakPoint }></BreakPointElement>
             ))}

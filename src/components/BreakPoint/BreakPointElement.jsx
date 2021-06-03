@@ -4,9 +4,11 @@ import { CopyToClipBoard } from '../index'
 
 export function BreakPointElement( { name, breakPoint }) {
 
-return <div className="border">
+    let computed = parseInt(breakPoint.value.substring(0, breakPoint.value.length - 2));
+    
+    return <div style={{width: computed + 4}} className="border">
         <CopyToClipBoard text={name}>
-            <div style={{width: breakPoint.value}} className="bg-pink-300 h-[140px]"> </div>
+            <div style={{width: breakPoint.value}} className="bg-pink-300 h-[160px]"> </div>
         </CopyToClipBoard>
         <div className="m-sm">
             <p> { name } </p>
