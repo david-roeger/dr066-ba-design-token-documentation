@@ -7,7 +7,7 @@ export function FontElement( { name, font }) {
     let lineHeight = font.lineheight.value;
     let family = font.family.value;
 
-    return <div className="border p-sm">
+    return <div className="col-span-2 border p-sm">
         <CopyToClipBoard text={`font-${family} text-${name} text-leading-${name}`}>
             <div className="bg-white">
                 <input onClick={(e) => e.stopPropagation()} style={{fontSize: size, fontFamily: family}} className="w-full bg-gray-100 focus:outline-none ring-black focus:ring p-sm" defaultValue="Lorem Ipsum"/>
