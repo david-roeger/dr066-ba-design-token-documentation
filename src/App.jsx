@@ -2,10 +2,10 @@
 
 
 import React from 'react';
-import { BrowserRouter, Route, Switch, useLocation } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import { Nav, ColorContainer, FontContainer, SpacingContainer, GridContainer, BorderContainer, BreakPointContainer } from './Components/index'
-import { Index } from './Layouts/index'
+import { Index } from './Layouts/layout'
 import tokens from 'dr066-ba-design-token-builder/web'
 
 let colors = tokens.colors;
