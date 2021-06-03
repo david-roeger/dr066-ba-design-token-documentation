@@ -1,5 +1,12 @@
+
+
+
+import React from 'react';
+import { BrowserRouter, Route, Switch, useLocation } from 'react-router-dom';
+
 import { Nav, ColorContainer, FontContainer, SpacingContainer, GridContainer, BorderContainer, BreakPointContainer } from './Components/index'
-import tokens from 'dr066-ba-design-token-builder/tokens'
+import { Index } from './Layouts/index'
+import tokens from 'dr066-ba-design-token-builder/web'
 
 let colors = tokens.colors;
 let fonts = tokens.font;
@@ -9,25 +16,21 @@ let grids = tokens.grid;
 let breakPoints = tokens.breakPoints;
 
 
-import React from 'react';
-import { BrowserRouter, Route, Switch, useLocation } from 'react-router-dom';
-
-
 function App() {
   
   return (
     <div>
       <BrowserRouter>
-        <div className="font-inter px-sm md:p-md lg:p-lg xl:p-2xl">
+        <div className="font-inter">
           <Nav></Nav>
           <Switch>
-              <Route exact path="/" component={Index} />
-              <Route path="/color" render={() => <ColorRoute />} />
-              <Route path="/font" render={() => <FontRoute />} />
-              <Route path="/spacing" render={() => <SpacingRoute />} />
-              <Route path="/border" render={() => <BorderRoute />} />
-              <Route path="/grid" render={() => <GridRoute />} />
-              <Route path="/breakpoint" render={() => <BreakPointRoute />} />
+              <Route exact path="/" render={() => <Index />} />
+              <Route path="/color" render={() => <ColorContainer colors={colors} /> } />
+              <Route path="/font" render={() =>  <FontContainer fonts={fonts} />} />
+              <Route path="/spacing" render={() => <SpacingContainer spacings={spacings}></SpacingContainer>} />
+              <Route path="/border" render={() =>   <BorderContainer borders={borders} />} />
+              <Route path="/grid" render={() =>   <GridContainer grids={grids} />} />
+              <Route path="/breakpoint" render={() =>   <BreakPointContainer vertical breakPoints={breakPoints} />} />
               <Route path="/overview" render={() => <OverviewRoute />} />
           </Switch>
         </div>
@@ -35,35 +38,6 @@ function App() {
     </div>
   );
 }
-
-const Index = () => (
-  <div>
-    Hallo
-  </div>
-)
-const ColorRoute = () => (
-    <ColorContainer colors={colors}></ColorContainer> 
-)
-
-const FontRoute = () => (
-  <FontContainer fonts={fonts}></FontContainer>
-)
-
-const SpacingRoute = () => (
-  <SpacingContainer spacings={spacings}></SpacingContainer>
-)
-
-const BorderRoute = () => (
-  <BorderContainer borders={borders}></BorderContainer>
-)
-
-const GridRoute = () => (
-  <GridContainer grids={grids}></GridContainer>
-)
-
-const BreakPointRoute = () => (
-  <BreakPointContainer vertical breakPoints={breakPoints}></BreakPointContainer>
-)
 
 const OverviewRoute = () => (
   <div>
