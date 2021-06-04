@@ -1,7 +1,8 @@
 
 import React, { useState } from 'react';
 
-export function CopyToClipBoard( { text, full, children } ) {
+import './index.css'
+export function CopyToClipBoard( { text, full, bg, children } ) {
     const [success, setSuccess] = useState(false);
 
     function copy() {
@@ -9,14 +10,17 @@ export function CopyToClipBoard( { text, full, children } ) {
             setSuccess(true);
             setTimeout(() => {
                 setSuccess(false);   
-            }, 1000);
+            }, 400);
           }, function(err) {
             console.error('Async: Could not copy text: ', err);
           });
     }
     return <div className={`cursor-pointer ${full ? 'h-full' : ''}`} onClick={copy}>
-        <div className={`${success ? 'animate-pulse-fast' : ''} bg-gray-100`}>
-            { children }
+        <div className="grid grid-cols-1 grid-rows-1">
+            <div style={{ aspectRatio: '1 / 1'}} className={`${success ? 'custom-animation' : 'opacity-0'} w-auto ml-auto rounded-full ${bg} row-start-1 col-start-1`}></div>
+            <div className="row-start-1 col-start-1 relative">
+                { children }
+            </div>
         </div>
     </div>
 };
@@ -24,4 +28,5 @@ export function CopyToClipBoard( { text, full, children } ) {
 CopyToClipBoard.defaultProps = {
     text: '',
     full: false,
+    bg: 'bg-pink-700'
 };  
