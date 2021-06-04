@@ -15,16 +15,19 @@ export function Index() {
             <p>Tokens are imported directly from the <a className="text-blue-500 hover:underline" href="https://git@github.com/david-roeger/dr066-ba-design-token-builder">Design Token Builder Projekt</a> and rendered dynamically.</p>
         </Description>
         <Description>
-            <p>Ideas for the future:</p>
-            <ul className="list-disc list-inside">
+            <p className="underline pt-md">Ideas for the future</p>
+            <ul className="list-disc">
                 <li>Add an Option to choose prefered Platform (iOS, Web, Andorid,..) - Change Token names, values and copy texts accordingly. Currently only Tailwind is supported</li>
                 <li>Usability improvements (add Keyboard Shortcuts)</li>
                 <li>Add an Option to run the token generation Process via Webhook / Github Actions</li>
                 <li>Maybe include the token generation process in this project?</li>
             </ul>
         </Description>
-        <a className="mt-lg py-xs px-sm cursor-pointer border border-black bg-black text-white" href={blob} download="tokens.json">
-            download Tokens
-        </a>
+        <div className="pt-md">
+            <a className="mt-lg py-xs px-sm cursor-pointer border border-black bg-black text-white" href={blob} download="tokens.json">
+                download Tokens
+            </a>
+        </div>
+
     </Container>
 }
