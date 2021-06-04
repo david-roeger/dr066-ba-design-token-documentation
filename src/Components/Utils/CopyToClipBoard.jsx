@@ -17,7 +17,7 @@ export function CopyToClipBoard( { text, full, bg, children } ) {
     }
     return <div className={`cursor-pointer ${full ? 'h-full' : ''}`} onClick={copy}>
         <div className="grid grid-cols-1 grid-rows-1">
-            <div style={{ aspectRatio: '1 / 1'}} className={`${success ? 'custom-animation' : 'opacity-0'} w-auto ml-auto rounded-full ${bg} row-start-1 col-start-1`}></div>
+            <div className={`${success ? 'custom-animation' : 'opacity-0'} w-xl h-xl ml-auto rounded-full ${bg} row-start-1 col-start-1`}></div>
             <div className="row-start-1 col-start-1 relative">
                 { children }
             </div>
