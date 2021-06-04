@@ -7,7 +7,7 @@ let navConfig = [
     {
         name: 'Start',
         route: '/',
-        color: 'bg-black text-white'
+        color: 'bg-gray-500 text-white'
     },
     {
         name: 'Color',
@@ -42,7 +42,7 @@ let navConfig = [
     {
         name: 'Overview',
         route: '/overview',
-        color: 'bg-black text-white'
+        color: 'bg-gray-500 text-white'
     }
 ]
 export function Nav() {
