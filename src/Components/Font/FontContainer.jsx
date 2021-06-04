@@ -5,7 +5,7 @@ import { Container, Description, FontElement } from '../index'
 export function FontContainer( { description, fonts } ) {
 
     return <Container>
-        <h2 className="text-xl mb-sm">Typography</h2>
+        <h2 className="text-xl leading-xl mb-sm">Typography</h2>
         { description && 
             <Description>
                 <p>Kurzer Beschreibungstext</p>

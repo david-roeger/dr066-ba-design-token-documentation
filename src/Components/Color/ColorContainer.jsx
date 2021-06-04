@@ -4,7 +4,7 @@ import { Container, Description, ColorElement } from '../index'
 
 export function ColorContainer( { description, colors } ) {
     return <Container>
-        <h2 className="text-xl mb-sm">Color</h2>
+        <h2 className="text-xl leading-xl md-sb">Color</h2>
         { description && 
             <Description>
                 <p>Kurzer Beschreibungstext</p>

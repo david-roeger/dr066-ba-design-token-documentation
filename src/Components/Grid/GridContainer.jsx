@@ -5,7 +5,7 @@ import { Container, Description, GridElement } from '../index'
 export function GridContainer( { description, grids } ) {
 
 return <Container>
-        <h2 className="text-xl mb-sm">Grid</h2>
+        <h2 className="text-xl leading-xl mb-sm">Grid</h2>
         { description && 
             <Description>
                 <p>Kurzer Beschreibungstext</p>

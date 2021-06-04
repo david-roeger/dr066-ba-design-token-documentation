@@ -5,7 +5,7 @@ import { Container, Description, SpacingElement } from '../index'
 export function SpacingContainer( { description, spacings } ) {
 
     return <Container>
-       <h2 className="text-xl mb-sm">Spacing</h2>
+       <h2 className="text-xl leading-xl mb-sm">Spacing</h2>
        { description && 
             <Description>
                 <p>Kurzer Beschreibungstext</p>

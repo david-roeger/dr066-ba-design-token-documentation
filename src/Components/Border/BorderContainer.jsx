@@ -4,7 +4,7 @@ import { Container, Description, BorderElement } from '../index'
 
 export function BorderContainer( { description, borders } ) {
     return <Container>
-        <h2 className="text-xl mb-sm">Border</h2>
+        <h2 className="text-xl leading-xl mb-sm">Border</h2>
         { description && 
             <Description>
                 <p>Kurzer Beschreibungstext</p>

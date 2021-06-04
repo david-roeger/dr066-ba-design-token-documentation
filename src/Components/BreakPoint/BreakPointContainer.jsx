@@ -27,7 +27,7 @@ export function BreakPointContainer( { description, breakPoints, vertical } ) {
 
     return <div>
         <Container alignedBottom>
-        <h2 className="text-xl mb-sm">Breakpoint</h2>
+        <h2 className="text-xl leading-xl mb-sm">Breakpoint</h2>
         { description && 
             <Description>
                 <p>Kurzer Beschreibungstext</p>
