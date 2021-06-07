@@ -4,22 +4,26 @@ import { Container, Description, BreakPointElement } from '../index'
 
 export function BreakPointContainer( { description, breakPoints, vertical } ) {
 
-    let breakPointValueMap = Object.keys(breakPoints).map(breakPoint => {
-        return getComputed(breakPoints[breakPoint]);
+    let breakPointsComputed = [];
+    Object.keys(breakPoints).forEach(breakPoint => {
+        breakPointsComputed.push({
+            name: breakPoint,
+            breakPoint: breakPoints[breakPoint],
+            computed: getComputed(breakPoints[breakPoint]) 
+        })
     });
 
+    breakPointsComputed.sort((a,b) =>  b.computed - a.computed);
 
-    breakPointValueMap.reverse();
-    breakPointValueMap.push(0);
-
-    let breakPointPercentMap = breakPointValueMap.map((value, index) => {
+    breakPointsComputed.forEach(breakPoint => {
+        let computed = breakPoint.computed
         let p = 100;
-        let first = breakPointValueMap[0]
-        if(value !== first) {
-            p = 100 / first * value
+        let first = breakPointsComputed[0]?.computed;
+        if(computed !== first) {
+            p = 100 / first * computed
         };
-        return p
-    })
+        breakPoint.percent = p;
+    });
 
     function getComputed( { value }) {
         return parseInt(value.substring(0, value.length - 2));
@@ -35,12 +39,13 @@ export function BreakPointContainer( { description, breakPoints, vertical } ) {
         }
             </Container>
         <div className={`block w-full`}>
-            { Object.keys(breakPoints).reverse().map((breakPoint, index) => (
+            { breakPointsComputed.map((breakPoint, index) => (
                 <BreakPointElement 
-                    name={ breakPoint } 
-                    breakPoint={ breakPoints[breakPoint] } 
-                    computed={breakPointPercentMap[index]} 
-                    index={index} key={ breakPoint }></BreakPointElement>
+                    name={ breakPoint.name } 
+                    breakPoint={ breakPoint.breakPoint } 
+                    percent={ breakPoint.percent } 
+                    index={index} key={ breakPoint.name }
+                    length={ breakPointsComputed.length }></BreakPointElement>
             ))}
         </div>
     </div>
