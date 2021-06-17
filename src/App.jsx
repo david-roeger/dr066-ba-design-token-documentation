@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 
 import { Nav, ColorContainer, FontContainer, SpacingContainer, GridContainer, BorderContainer, BreakPointContainer } from './Components/index'
 import { Index } from './Layouts/index'
@@ -28,6 +28,7 @@ function App() {
               <Route path="/grid" render={() =>   <GridContainer grids={grids} />} />
               <Route path="/breakpoint" render={() =>   <BreakPointContainer vertical breakPoints={breakPoints} />} />
               <Route path="/overview" render={() => <OverviewRoute />} />
+              <Redirect path="/" to="/" />
           </Switch>
         </div>
       </BrowserRouter>
