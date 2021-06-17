@@ -47,8 +47,7 @@ let navConfig = [
 ]
 export function Nav() {
     let location = useLocation();
-    location
-
+    
     return <Container>
         <nav>
             <ul className="flex flex-wrap gap-x-md gap-y-sm">

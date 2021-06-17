@@ -8,7 +8,7 @@ export function ColorElement( { name, color }) {
         // Choose correct separator
         let sep = rgb.indexOf(",") > -1 ? "," : " ";
         // Turn "rgb(r,g,b)" into [r,g,b]
-        rgb = rgb.substr(5).split(")")[0].split(sep);
+        rgb = rgb.substr(4).split(")")[0].split(sep);
         
         let r = (+rgb[0]).toString(16),
             g = (+rgb[1]).toString(16),
@@ -21,7 +21,7 @@ export function ColorElement( { name, color }) {
         if (b.length == 1)
             b = "0" + b;
         
-        return "#" + r + g + b;
+        return "#" + (r + g + b).toUpperCase();
         }
 
     return <div className="border">
