@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 
 import { Nav, ColorContainer, FontContainer, SpacingContainer, GridContainer, BorderContainer, BreakPointContainer } from './Components/index'
 import { Index } from './Layouts/index'
-import tokens from 'dr066-ba-design-token-builder/web'
+import tokens from 'dr066-ba-design-token-builder/build/web/tokens'
 
 let colors = tokens.colors;
 let fonts = tokens.font;
