@@ -1,7 +1,8 @@
-const theme = require('dr066-ba-design-token-builder/tailwindTheme');
-theme.extend.animation = {
+const theme = require('dr066-ba-design-token-builder/build/web/tailwindTheme');
+/*theme.extend.animation = {
   'ping-slow': 'ping 1s linear infinite',
-}
+}*/
+
 
 module.exports = {
    mode: "jit",

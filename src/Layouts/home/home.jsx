@@ -2,7 +2,7 @@
 import React from 'react';
 import { Container, Description } from '../../Components/index'
 
-import tokens from 'dr066-ba-design-token-builder/tokens';
+import tokens from 'dr066-ba-design-token-builder/build/tokens';
 
 export function Index() {
     let blob = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(tokens, null, 2));
@@ -24,7 +24,7 @@ export function Index() {
             </ul>
         </Description>
         <div className="pt-md">
-            <a className="mt-lg py-xs px-sm cursor-pointer border border-black bg-black text-white" href={blob} download="tokens.json">
+            <a className="mt-lg py-xs px-sm cursor-pointer border border-black bg-black text-white ring-width-0.5 ring-offset-2 ring-black hover:ring" href={blob} download="tokens.json">
                 download Tokens
             </a>
         </div>

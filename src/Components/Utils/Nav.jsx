@@ -54,7 +54,7 @@ export function Nav() {
                 {
                     navConfig.map((item, index) => (
                         <Link to={item.route} key={index}>
-                            <li className={`select-none py-xs px-sm cursor-pointer border border-black ${location.pathname === item.route ? item.color : ''}`}>
+                            <li className={`select-none py-xs px-sm cursor-pointer border border-black ring-width-0.5 ring-offset-2 ring-black hover:ring ${location.pathname === item.route ? item.color : ''}`}>
                                 {item.name}
                             </li>
                         </Link>
