@@ -1,1 +1,1 @@
-export { Index } from './home/home'
+export { Index } from "./home/home";
